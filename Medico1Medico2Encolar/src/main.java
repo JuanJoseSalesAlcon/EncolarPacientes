@@ -25,6 +25,7 @@ public class main {
         Medico2Model ModeloLista2 = new Medico2Model();
         
         Medico1Controler ControladorLista = new Medico1Controler(Pacientes, VistaPacientes, VistaIngresarPacientes, ModeloLista1, ModeloLista2);
+        //A
     }
     
 }
