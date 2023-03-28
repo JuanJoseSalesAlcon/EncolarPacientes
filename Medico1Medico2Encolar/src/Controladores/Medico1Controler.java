@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,6 +42,7 @@ Medico2Model ModeloMedico2;
         this.PrincipalPacientes.btnVerPacientes.addActionListener(this);
         this.VistaIngresarPacientes.btnMedico1.addActionListener(this);
         this.VistaIngresarPacientes.btnMedico2.addActionListener(this);
+        this.VistaPacientes.btnAtenderM1.addActionListener(this);
         //LEVANTAR LA VISTA LISTAs
         this.PrincipalPacientes.setLocationRelativeTo(null);
         this.PrincipalPacientes.setVisible(true);
@@ -59,7 +61,7 @@ Medico2Model ModeloMedico2;
                     this.VistaIngresarPacientes.txtNombres.getText());
             
             //TRAE LA LISTA CLIENTES DESDE EL MODELO
-            Queue<Medico1> listaLocal1 = this.ModeloMedico1.ListarClientes1();
+            Queue<Medico1> listaLocal1 = this.ModeloMedico1.ListarPacientes1();
             
             //RECORRE LA LISTA CLIENTES DESDE EL MODELO
                 String Cadena = "";
@@ -75,7 +77,7 @@ Medico2Model ModeloMedico2;
                     this.VistaIngresarPacientes.txtNombres.getText());
             
             //TRAE LA LISTA CLIENTES DESDE EL MODELO
-            Queue<Medico2> listaLocal2 = this.ModeloMedico2.ListarClientes2();
+            Queue<Medico2> listaLocal2 = this.ModeloMedico2.ListarPacientes2();
             
             //RECORRE LA LISTA CLIENTES DESDE EL MODELO
                 String Cadena = "";
@@ -90,5 +92,14 @@ Medico2Model ModeloMedico2;
             this.VistaPacientes.setLocationRelativeTo(null);
             this.VistaPacientes.setVisible(true);     
         }
+        if(e.getSource() == this.VistaPacientes.btnAtenderM1)
+        {
+            Queue<Medico1> listaLocal1 = this.ModeloMedico1.ListarPacientes1();
+            listaLocal1.remove();
+            this.ModeloMedico1.ListarPacientes1();
+
+        }   
+        
+        }
     }
-}
+    

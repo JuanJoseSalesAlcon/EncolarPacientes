@@ -22,7 +22,7 @@ Queue<Medico2> ListaMedico2 = new LinkedList();
         JOptionPane.showMessageDialog(null, "PACIENTE AGREGADO A LA LISTA DEL MEDICO 2");
     }
     
-public Queue ListarClientes2()
+public Queue ListarPacientes2()
 {
     return this.ListaMedico2;
 }
