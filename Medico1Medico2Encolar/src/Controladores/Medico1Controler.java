@@ -43,6 +43,7 @@ Medico2Model ModeloMedico2;
         this.VistaIngresarPacientes.btnMedico1.addActionListener(this);
         this.VistaIngresarPacientes.btnMedico2.addActionListener(this);
         this.VistaPacientes.btnAtenderM1.addActionListener(this);
+        this.VistaPacientes.btnAtenderM2.addActionListener(this);
         //LEVANTAR LA VISTA LISTAs
         this.PrincipalPacientes.setLocationRelativeTo(null);
         this.PrincipalPacientes.setVisible(true);
@@ -96,9 +97,24 @@ Medico2Model ModeloMedico2;
         {
             Queue<Medico1> listaLocal1 = this.ModeloMedico1.ListarPacientes1();
             listaLocal1.remove();
-            this.ModeloMedico1.ListarPacientes1();
-
+            String Cadena = "";
+                for(Medico1 MiListaPacientes: listaLocal1)
+                {
+                    Cadena = Cadena + MiListaPacientes.getApellidos()+" "+MiListaPacientes.getNombre()+"\n";
+                }
+                this.VistaPacientes.txtListaMedico1.setText(Cadena);   
         }   
+        if(e.getSource() == this.VistaPacientes.btnAtenderM2)
+        {
+            Queue<Medico2> listaLocal2 = this.ModeloMedico2.ListarPacientes2();
+            listaLocal2.remove();
+            String Cadena = "";
+                for(Medico2 MiListaPacientes: listaLocal2)
+                {
+                    Cadena = Cadena + MiListaPacientes.getApellidos()+" "+MiListaPacientes.getNombre()+"\n";
+                }
+                this.VistaPacientes.txtListaMedico2.setText(Cadena);  
+        } 
         
         }
     }
